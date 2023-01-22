@@ -15,7 +15,7 @@
 <行った場所や総距離を投稿し共有する。>
 
 ## 設計書
-<...>
+<https://docs.google.com/spreadsheets/d/16D2k3tQWKrS3tNQwGZDaSulpRNJRnBmqQwMmtuID-cQ/edit?usp=sharing>
 
 ## 開発環境
 - OS：Linux(CentOS)
