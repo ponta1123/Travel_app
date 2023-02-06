@@ -7,10 +7,15 @@ Rails.application.routes.draw do
 
 
   #ユーザー URL /users/sign_in....
-  devise_for :users,skip: [:passwords] ,controllers: {
+  devise_for :user,skip: [:passwords] ,controllers: {
     registrations: "user/registrations",
     sessions: 'user/sessions'
   }
+
+  scope module: :user do
+  end
+
+  root to: 'user/homes#top'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
 end
