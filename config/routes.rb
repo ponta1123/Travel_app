@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   }
 
+  post "guest_login", to: "guest_sessions#create"
+
   scope module: :user do
   end
 

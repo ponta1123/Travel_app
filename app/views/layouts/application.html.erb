@@ -39,6 +39,7 @@
             <button type="button" class="btn btn-outline-primary mx-2">
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
             </button>
+
           <% else %>
             <button type="button" class="btn btn-outline-secondary mx-2">
                <%= link_to "ログイン", new_user_session_path %>
@@ -53,7 +54,7 @@
               投稿一覧
             </button>
             <button type="button" class="btn btn-outline-secondary mx-2">
-           　ゲスト
+           　<%= link_to "ゲストログイン(お試し)", guest_login_path, method: :post %>
             </button>
           <% end %>
         </div>
