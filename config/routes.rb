@@ -7,9 +7,10 @@ Rails.application.routes.draw do
 
 
   #ユーザー URL /users/sign_in....
-  devise_for :user,skip: [:passwords] ,controllers: {
+  devise_for :user,controllers: {
     registrations: "user/registrations",
     sessions: 'user/sessions'
+
   }
 
   scope module: :user do
