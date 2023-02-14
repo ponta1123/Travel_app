@@ -25,22 +25,22 @@
              <%= link_to "top", root_path %>
             </button>
             <button type="button" class="btn btn-outline-primary mx-2">
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+             <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
             </button>
             <%= flash[:notice] %>
-          <% elsif user_signed_in? %>
-           <button type="button" class="btn btn-outline-primary mx-2">
-            <%= link_to "top", root_path %>
-           </button>
-           <button type="button" class="btn btn-outline-primary mx-2">
-             マイページ
-           </button>
-           <button type="button" class="btn btn-outline-primary mx-2">
-             about
-           </button>
-           <button type="button" class="btn btn-outline-primary mx-2">
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-           </button>
+           <% elsif user_signed_in? %>
+             <button type="button" class="btn btn-outline-primary mx-2">
+              <%= link_to "top", root_path %>
+             </button>
+             <button type="button" class="btn btn-outline-primary mx-2">
+               マイページ
+             </button>
+             <button type="button" class="btn btn-outline-primary mx-2">
+               about
+             </button>
+             <button type="button" class="btn btn-outline-primary mx-2">
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+             </button>
           <% elsif admin_signed_in? %>
            <button type="button" class="btn btn-outline-primary mx-2">
              <%= link_to "管理者ログイン", new_admin_session_path %>
@@ -50,11 +50,10 @@
            </button>
            <button type="button" class="btn btn-outline-primary mx-2">
              会員一覧
-            </button>
-            <button type="button" class="btn btn-outline-primary mx-2">
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-            </button>
-
+           </button>
+           <button type="button" class="btn btn-outline-primary mx-2">
+             <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+           </button>
           <% else %>
             <button type="button" class="btn btn-outline-secondary mx-2">
                <%= link_to "ログイン", new_user_session_path %>
