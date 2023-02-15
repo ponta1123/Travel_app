@@ -14,6 +14,8 @@ class User::PostsController < ApplicationController
     redirect_to posts_path
   end
 
+
+
   def post_params
     params.require(:post).permit(:title, :introduction, :image, :tourist_spot)
   end

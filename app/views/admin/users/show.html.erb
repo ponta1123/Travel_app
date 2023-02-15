@@ -1,47 +1,76 @@
 <div class="container">
-  <div class="row mt-3">
+  <div class="row mt-3 offset-1">
     <div class="badge bg-light">
-      <%= @user.nick_name %>さんの詳細
+      <h4><%= @user.nick_name %>さんの詳細</h4>
+    </div>
+    <div class="col-3">
+      <%= link_to "編集する", edit_admin_user_path(@user.id), class: "offset-3 btn btn-success" %>
     </div>
   </div>
-  <div class="row mt-4">
-    <div class="col-3 badge bg-light">
-      会員ID
+  <div class="row mt-4 offset-2">
+    <div class="col-2 badge bg-light">
+      <h5>会員ID</h5>
     </div>
-    <div class="col-4">
-      <%= @user.id %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-3 badge bg-light">
-      登録名
-    </div>
-    <div class="col-4">
-      <%= @user.nick_name %>
+    <div class="col-4 ml-4">
+      <h5><%= @user.id %></h5>
     </div>
   </div>
-  <div class="row">
-    <div class="col-3 badge bg-light">
-      メールアドレス
+  <div class="row mt-2 offset-2">
+    <div class="col-2 badge bg-light">
+      <h5>登録名</h5>
     </div>
-    <div class="col-4">
-      <%= @user.email %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-3 badge bg-light">
-      登録住所
-    </div>
-    <div class="col-4">
-      <%= @user.prefectural %><%= @user.city %>
+    <div class="col-4 ml-4">
+      <h5><%= @user.nick_name %></h5>
     </div>
   </div>
-  <div class="row">
-    <div class="col-3 badge bg-light">
-      登録日
+  <div class="row mt-2 offset-2">
+    <div class="col-2 badge bg-light">
+      <h5>メールアドレス</h5>
     </div>
-    <div class="col-4">
-      <%= @user.created_at.strftime('%Y/%m/%d/ %H:%M') %>
+    <div class="col-4 ml-4">
+      <h5><%= @user.email %></h5>
     </div>
+  </div>
+  <div class="row mt-2 offset-2">
+    <div class="col-2 badge bg-light">
+      <h5>登録住所</h5>
+    </div>
+    <div class="col-4 ml-4">
+      <h5><%= @user.prefectural %><%= @user.city %></h5>
+    </div>
+  </div>
+  <div class="row mt-2 offset-2">
+    <div class="col-2 badge bg-light">
+      <h5>登録日</h5>
+    </div>
+    <div class="col-4 ml-4">
+      <h5><%= @user.created_at.strftime('%Y/%m/%d/ %H:%M') %></h5>
+    </div>
+  </div>
+  <div class="row mt-2 offset-2">
+    <table class="table table-success table-striped">
+      <thead>
+        <tr>
+          <th>投稿日</th>
+          <th>タイトル</th>
+          <th>内容</th>
+          <th>写真</th>
+          <th>タグ</th>
+          <th>削除</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+        <tr>
+          <td><%= user.created_at.strftime('%Y/%m/%d %H:%M') %></td>
+          <td><%= user.title %></td>
+          <td><%= user.introduction %></td>
+          <td><%= image_tag user.image, size: "100x100" %></td>
+          <td></td>
+          <td><%= link_to "削除する", admin_post_path(user.id), method: :delete, class: "col-8 ml-2 btn btn-danger" %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </div>

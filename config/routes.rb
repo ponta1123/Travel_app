@@ -9,8 +9,8 @@ Rails.application.routes.draw do
 
   #管理者
   namespace :admin do
-    resources :posts, only: [:show, :edit, :update, :destroy]
-    resources :users, only: [:show, :edit, :update, :index]
+    resources :posts, only: [:show, :edit, :update, :destroy, :index]
+    resources :users, only: [:show, :edit, :update]
 
   end
 
