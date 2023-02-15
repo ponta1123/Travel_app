@@ -1,14 +1,14 @@
 <div class="container">
-  <div class="row">
-    <table>
+  <div class="row mt-4">
+    <table border  width="30%" height="50%">
      <tr>
        <th>投稿者</th>
-       <th>タイトル</th>
+       <th>登録日</th>
      </tr>
      <% @users.each do |user| %>
      <tr>
-       <td><%= user.nick_name %></td>
-       <td></td>
+       <td><%= link_to user.nick_name, admin_user_path(user.id) %></td>
+       <td><%= user.created_at.strftime('%Y/%m/%d/ %H:%M') %></td>
      </tr>
      <% end %>
     </table>
